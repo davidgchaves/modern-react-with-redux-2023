@@ -10,9 +10,17 @@ const App = () => {
   const message = Math.random() > 0.5 ? "Hello there!" : "Bye there!";
 
   return (
-    <h1>
-      {message} at {new Date().toLocaleTimeString()}
-    </h1>
+    <>
+      <h1>
+        {message} at {new Date().toLocaleTimeString()}
+      </h1>
+      <input
+        type="number"
+        style={{ border: "3px solid red" }}
+        min={5}
+        max={10}
+      />
+    </>
   );
 };
 
