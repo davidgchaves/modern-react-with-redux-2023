@@ -1,35 +1,10 @@
 // 1) Import
 import React from "react";
 import ReactDOM from "react-dom/client";
+import App from "./App";
 
 // 2) Reference to div ID root
 const div = document.getElementById("root");
 
-// 3) Create component
-const App = () => {
-  const message = Math.random() > 0.5 ? "Hello there!" : "Bye there!";
-
-  return (
-    <>
-      <h1>
-        {message} at {new Date().toLocaleTimeString()}
-      </h1>
-      <input
-        type="number"
-        style={{ border: "3px solid red" }}
-        min={5}
-        max={10}
-      />
-      <br />
-      <textarea
-        autoFocus
-        maxLength={15}
-        spellCheck
-        style={{ textDecoration: "none", paddingTop: "20px" }}
-      ></textarea>
-    </>
-  );
-};
-
-// 4) React takes control and shows the component on the screen
+// 3) React takes control and shows the component on the screen
 ReactDOM.createRoot(div).render(<App />);
