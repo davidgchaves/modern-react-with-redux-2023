@@ -20,6 +20,13 @@ const App = () => {
         min={5}
         max={10}
       />
+      <br />
+      <textarea
+        autoFocus
+        maxLength={15}
+        spellCheck
+        style={{ textDecoration: "none", paddingTop: "20px" }}
+      ></textarea>
     </>
   );
 };
