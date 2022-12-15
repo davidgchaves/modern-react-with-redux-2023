@@ -5,9 +5,9 @@ const App = () => {
     <div>
       <div>Personal Digital Assistants</div>
 
-      <ProfileCard />
-      <ProfileCard />
-      <ProfileCard />
+      <ProfileCard title="Alexa" handle="@alexa" />
+      <ProfileCard title="Cortana" handle="@cortana" />
+      <ProfileCard title="Siri" handle="@siri" />
     </div>
   );
 };
