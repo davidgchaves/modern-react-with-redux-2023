@@ -1,5 +1,13 @@
 const App = () => {
-  return <div>Show animal list here!</div>;
+  const onButtonClick = () => {
+    console.log("Animal button was clicked!");
+  };
+
+  return (
+    <div>
+      <button onClick={onButtonClick}>Add Animal</button>
+    </div>
+  );
 };
 
 export default App;
