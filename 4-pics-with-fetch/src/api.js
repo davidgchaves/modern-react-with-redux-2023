@@ -1,6 +1,7 @@
 const searchImages = async (term) => {
   const urlWithQueryParams =
-    "https://api.unsplash.com/search/photos?" +
+    "https://api.unsplash.com/search/photos" +
+    "?" +
     new URLSearchParams({ query: term });
 
   const response = await fetch(urlWithQueryParams, {
