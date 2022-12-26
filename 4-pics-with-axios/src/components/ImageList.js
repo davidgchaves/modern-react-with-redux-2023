@@ -1,9 +1,9 @@
 import "./ImageList.css";
 import ImageShow from "./ImageShow";
 
-const ImageList = ({ images }) => {
+const ImageList = ({ id, images }) => {
   const renderedImages = images.map((image) => {
-    return <ImageShow image={image} />;
+    return <ImageShow key={id} image={image} />;
   });
   return <div className="image-list">{renderedImages}</div>;
 };
