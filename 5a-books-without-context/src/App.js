@@ -6,13 +6,20 @@ import BookCreate from "./components/BookCreate";
 const App = () => {
   const [books, setBooks] = useState([]);
 
+  const generateBookId = () => books.length + 1;
+
   const handleCreateBook = (title) => {
-    console.log("Need to add book with: ", title);
+    setBooks([...books, { id: generateBookId(), title }]);
   };
 
   return (
     <div>
       <BookList />
+      {books.map((book) => (
+        <div>
+          id: {book.id}, title: {book.title}
+        </div>
+      ))}
       <BookCreate onSubmit={handleCreateBook} />
     </div>
   );
