@@ -13,13 +13,8 @@ const App = () => {
   };
 
   return (
-    <div>
-      <BookList />
-      {books.map((book) => (
-        <div>
-          id: {book.id}, title: {book.title}
-        </div>
-      ))}
+    <div className="app">
+      <BookList books={books} />
       <BookCreate onSubmit={handleCreateBook} />
     </div>
   );
