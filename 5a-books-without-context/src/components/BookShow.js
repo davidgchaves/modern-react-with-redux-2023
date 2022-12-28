@@ -18,17 +18,20 @@ const BookShow = ({ book, onDelete, onEdit }) => {
     onEdit(id, newTitle);
   };
 
+  const conditionalShowBookEdit = () =>
+    showEdit ? (
+      <BookEdit book={book} onSubmit={onFormSubmit} />
+    ) : (
+      <h3>{book.title}</h3>
+    );
+
   return (
     <div className="book-show">
       <img
         src={`https://picsum.photos/seed/${book.id}/300/200`}
         alt="random book cover"
       />
-      {showEdit ? (
-        <BookEdit book={book} onSubmit={onFormSubmit} />
-      ) : (
-        <h3>{book.title}</h3>
-      )}
+      {conditionalShowBookEdit()}
       <div className="actions">
         <button className="edit" onClick={onEditButtonClick}>
           Edit
