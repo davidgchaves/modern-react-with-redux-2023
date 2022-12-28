@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-const BookEdit = ({ book }) => {
-  const [title, setTitle] = useState(book.title);
+const BookEdit = ({ book, onSubmit }) => {
+  const [newTitle, setNewTitle] = useState(book.title);
 
   const onInputChange = (event) => {
-    setTitle(event.target.value);
+    setNewTitle(event.target.value);
   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    console.log(`New title is ${title}`);
+    onSubmit(book.id, newTitle);
   };
 
   return (
@@ -18,7 +18,7 @@ const BookEdit = ({ book }) => {
       <input
         className="input"
         type="text"
-        value={title}
+        value={newTitle}
         onChange={onInputChange}
       />
       <button className="button is-prmary">Save</button>

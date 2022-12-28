@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import BookEdit from "./BookEdit";
 
-const BookShow = ({ book, onDelete }) => {
+const BookShow = ({ book, onDelete, onEdit }) => {
   const [showEdit, setShowEdit] = useState(false);
 
   const onEditButtonClick = () => {
@@ -13,9 +13,18 @@ const BookShow = ({ book, onDelete }) => {
     onDelete(book.id);
   };
 
+  const onFormSubmit = (id, newTitle) => {
+    setShowEdit(false);
+    onEdit(id, newTitle);
+  };
+
   return (
     <div className="book-show">
-      {showEdit ? <BookEdit book={book} /> : <h3>{book.title}</h3>}
+      {showEdit ? (
+        <BookEdit book={book} onSubmit={onFormSubmit} />
+      ) : (
+        <h3>{book.title}</h3>
+      )}
       <div className="actions">
         <button className="edit" onClick={onEditButtonClick}>
           Edit

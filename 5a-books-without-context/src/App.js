@@ -16,9 +16,16 @@ const App = () => {
     setBooks(books.filter((book) => book.id !== id));
   };
 
+  const editBookById = (id, newTitle) => {
+    const updatedBooks = books.map((book) =>
+      book.id === id ? { ...book, title: newTitle } : book
+    );
+    setBooks(updatedBooks);
+  };
+
   return (
     <div className="app">
-      <BookList books={books} onDelete={deleteBookById} />
+      <BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
       <BookCreate onCreate={createBook} />
     </div>
   );
