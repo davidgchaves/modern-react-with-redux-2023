@@ -8,18 +8,18 @@ const App = () => {
 
   const generateBookId = () => Math.round(Math.random() * 99999);
 
-  const handleCreateBook = (title) => {
+  const createBook = (title) => {
     setBooks([...books, { id: generateBookId(), title }]);
   };
 
-  const handleDeleteBookById = (id) => {
+  const deleteBookById = (id) => {
     setBooks(books.filter((book) => book.id !== id));
   };
 
   return (
     <div className="app">
-      <BookList books={books} onBookDelete={handleDeleteBookById} />
-      <BookCreate onSubmit={handleCreateBook} />
+      <BookList books={books} onDelete={deleteBookById} />
+      <BookCreate onCreate={createBook} />
     </div>
   );
 };

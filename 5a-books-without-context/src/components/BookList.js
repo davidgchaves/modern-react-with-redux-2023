@@ -1,10 +1,10 @@
 import BookShow from "./BookShow";
 
-const BookList = ({ books, onBookDelete }) => {
+const BookList = ({ books, onDelete }) => {
   return (
     <div className="book-list">
       {books.map((book) => (
-        <BookShow key={book.id} book={book} onBookDelete={onBookDelete} />
+        <BookShow key={book.id} book={book} onDelete={onDelete} />
       ))}
     </div>
   );

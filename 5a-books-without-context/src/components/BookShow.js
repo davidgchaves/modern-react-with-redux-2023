@@ -1,6 +1,6 @@
-const BookShow = ({ book, onBookDelete }) => {
+const BookShow = ({ book, onDelete }) => {
   const handleClick = () => {
-    onBookDelete(book.id);
+    onDelete(book.id);
   };
 
   return (

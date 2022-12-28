@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BookCreate = ({ onSubmit }) => {
+const BookCreate = ({ onCreate }) => {
   const [title, setTitle] = useState("");
 
   const onInputChange = (event) => {
@@ -9,7 +9,7 @@ const BookCreate = ({ onSubmit }) => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    onSubmit(title);
+    onCreate(title);
     setTitle("");
   };
 
