@@ -12,9 +12,13 @@ const App = () => {
     setBooks([...books, { id: generateBookId(), title }]);
   };
 
+  const handleDeleteBookById = (id) => {
+    setBooks(books.filter((book) => book.id !== id));
+  };
+
   return (
     <div className="app">
-      <BookList books={books} />
+      <BookList books={books} onBookDelete={handleDeleteBookById} />
       <BookCreate onSubmit={handleCreateBook} />
     </div>
   );
