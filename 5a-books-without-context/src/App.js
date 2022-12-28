@@ -6,7 +6,7 @@ import BookCreate from "./components/BookCreate";
 const App = () => {
   const [books, setBooks] = useState([]);
 
-  const generateBookId = () => books.length + 1;
+  const generateBookId = () => Math.round(Math.random() * 99999);
 
   const handleCreateBook = (title) => {
     setBooks([...books, { id: generateBookId(), title }]);
