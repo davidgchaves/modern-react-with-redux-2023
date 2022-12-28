@@ -20,6 +20,10 @@ const BookShow = ({ book, onDelete, onEdit }) => {
 
   return (
     <div className="book-show">
+      <img
+        src={`https://picsum.photos/seed/${book.id}/300/200`}
+        alt="random book cover"
+      />
       {showEdit ? (
         <BookEdit book={book} onSubmit={onFormSubmit} />
       ) : (
